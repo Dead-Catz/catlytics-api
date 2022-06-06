@@ -1,0 +1,6 @@
+export const CONFIG = {
+    port: 2100,
+    DB_URL: `postgresql connection url`,
+    API_TOKEN: 'ur api token => ex: catlytics',
+    SYSTEM_TOKEN: `super admin token for CRUD API => ex:admin`,
+}
