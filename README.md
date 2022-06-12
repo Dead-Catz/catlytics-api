@@ -27,7 +27,7 @@ I personally recommend using metabase.
 https://www.metabase.com/
 
 ## Postman Collection:
-There are 2 most important routes in this project and postman collection for them is available [here](https://github.com/Dead-Catz/catlytics-api/blob/main/catlytics.postman_collection.json).
+There are 2 most important routes in this project and postman collection for them is available [catlytics.postman_collection.json](https://github.com/Dead-Catz/catlytics-api/blob/main/catlytics.postman_collection.json).
 Read source code If you need to use CRUD api routes.
 
 ## Data Structure
