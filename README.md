@@ -26,11 +26,15 @@ I personally recommend using metabase.
 
 https://www.metabase.com/
 
+## Postman Collection:
+There are 2 most important routes in this project and postman collection for them is available [here](https://github.com/Dead-Catz/catlytics-api/blob/main/catlytics.postman_collection.json).
+Read source code If you need to use CRUD api routes.
+
 ## Data Structure
 There are 2 main entities in this system: Events And Users. Using Users is totally optional. If u're developing a game/app/site that has no Authentication System you can Use this system's Users as a way of identefying your users. (or you can just send deviceId or ip as userId field to Events)
 ### Events:
 
-	   projectToken : string
+	  projectToken : string // If you're using one api instance for multiple projects.
 	  userId : string
 	  deviceId : string //you can also send ip for websites.
 	  eventName : string //recommended naming convention =>page:part:part:action_name ex: main_menu:settings_dialog:mute_sounds
