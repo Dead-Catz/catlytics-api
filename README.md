@@ -11,7 +11,6 @@ as a good in-house analytics soloution.
 - Clone this repo on one of your servers.
 - npm install (Tested with node 16)
 - Create a database in postgresql
-- Create a config.js file in src folder ( template available @ src/config.default.txt)
 - Create a folder called storage inside that folder create a file project-tokens.json this file is an array of strings ex : ["project1",project2"]
 ## How to run the api
 
