@@ -6,7 +6,7 @@
   "scripts": {
     "babel-node": "babel-node",
     "test": "nodemon --watch src --exec babel-node src/test.js",
-    "api": "nodemon --watch src --exec babel-node src/index.js --presets='@babel/preset-env'",
+    "start": "nodemon --watch src --exec babel-node src/index.js --presets='@babel/preset-env'",
     "db": "nodemon --exec babel-node src/db-update.js",
     "behzad": "nodemon --exec babel-node src/behzad.test.js",
     "build": "babel src -d dist",
@@ -19,6 +19,7 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.2",
