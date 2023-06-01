@@ -14,6 +14,13 @@ as a good in-house analytics soloution.
 - Create a config.js file in src folder ( template available @ src/config.default.txt)
 - Create a folder called storage inside that folder create a file project-tokens.json this file is an array of strings ex : ["project1",project2"]
 ## How to run the api
+
+**If you're using Docker:**
+
+Use Dockerfile-main to create an image then run the container
+
+You can check `docker-restart-sample.sh`
+
 **If you're using pm2:**
 
 `sudo chmod u+x restart-pm2.sh`
