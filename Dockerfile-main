@@ -4,7 +4,7 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci
 COPY . .
-COPY main.env .env
+COPY .env .env
 # COPY src/solana/nds_transaction_main.json ./src/solana/nds_transaction.json
 RUN npm run build
 EXPOSE 4875
