@@ -26,14 +26,7 @@ services:
   metabase:  
     image: metabase/metabase:latest  # Use the latest Metabase image  
     ports:  
-      - '3000:3000'  # Expose Metabase on port 3000  
-    environment:  
-      - MB_DB_TYPE=postgres  
-      - MB_DB_DBNAME=catlytics  # The same database name  
-      - MB_DB_PORT=5432  # The port your Postgres is running on  
-      - MB_DB_USER=catlytics  # The same user  
-      - MB_DB_PASS=catlytics  # The same password  
-      - MB_DB_HOST=db  # Reference the db service  
+      - '10333:3000'  # Expose Metabase on port 3000  
     depends_on:  
       - db  # Ensure DB is ready before Metabase starts  
 
