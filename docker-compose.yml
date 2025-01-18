@@ -1,0 +1,41 @@
+services:  
+  app:  
+    build:  
+      context: .  # Build the app from the current directory  
+    ports:  
+      - '10700:3000'  # Map host port to container port  
+    environment:  
+      DATABASE_URL: postgres://catlytics:catlytics@db:5432/catlytics  # Environment variable for database connection  
+      SYNC_DB: 'true'  # Sync database (set to false in production) 
+      SYSTEM_TOKEN: 'catlytics-admin'
+      PORT: 3000
+    depends_on:  
+      - db  # Ensure DB is ready before app starts  
+  
+  db:  
+    image: postgres:15-alpine  # Use the official Postgres 15 image  
+    ports:  
+      - '10433:5432'  # Expose the database port  
+    environment:  
+      POSTGRES_USER: catlytics  # Replace with your own username  
+      POSTGRES_PASSWORD: catlytics  # Replace with your own password  
+      POSTGRES_DB: catlytics  # Replace with your own database name  
+    volumes:  
+      - postgres_data:/var/lib/postgresql/data  # Persist database data  
+
+  metabase:  
+    image: metabase/metabase:latest  # Use the latest Metabase image  
+    ports:  
+      - '3000:3000'  # Expose Metabase on port 3000  
+    environment:  
+      - MB_DB_TYPE=postgres  
+      - MB_DB_DBNAME=catlytics  # The same database name  
+      - MB_DB_PORT=5432  # The port your Postgres is running on  
+      - MB_DB_USER=catlytics  # The same user  
+      - MB_DB_PASS=catlytics  # The same password  
+      - MB_DB_HOST=db  # Reference the db service  
+    depends_on:  
+      - db  # Ensure DB is ready before Metabase starts  
+
+volumes:  
+  postgres_data:
